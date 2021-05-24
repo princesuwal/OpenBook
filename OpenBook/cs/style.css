@@ -1,0 +1,737 @@
+body{
+	width: 100%;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+	background-color: #004E4E;
+	padding: 0px;
+	margin: 0px;
+	color: #000000;
+}
+
+header{
+	padding-top: 0px;
+	margin-top: 0px;
+	width: 100%;
+	height: 4em;
+	background-color: aqua;
+	position: fixed;
+	z-index: 1;
+}
+
+#navbar{
+	padding: 0px;
+	margin: 0px;
+	float: right;
+}
+
+#navbar>ul>li{
+	list-style: none;
+	display: block;
+	float: left;
+	width: 12em;
+	margin: 0px 10px;
+	text-align: center;
+}
+
+#navbar ul li a{
+	text-decoration: none;
+	color: #000000;
+}
+
+.dropdown>a,
+.dropdown-content>a{
+	position:relative;
+	list-style: none;
+	display: block;
+	float: left;
+	width: 100%;
+	margin: 0px 10px;
+	text-align: center;
+}
+
+.dropdown>a:hover,
+.dropdown-content>a{
+	color:#000000;
+}
+
+.dropdown>a:before,
+.dropdown-content>a:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.dropdown > a:hover:before,
+.dropdown-content>a:hover:before{
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+
+.dropdown:hover .dropdown-content{
+	display:block;
+}
+
+.dropdown-content{
+	padding-top: 2em;
+	width: 100%;
+	display: none;
+}
+
+.dropdown-content>a{
+	width: 100%;
+	float:left;
+	background-color: aqua;
+	color: #000000;
+	text-decoration:none;
+	padding: 8px 0px;
+}
+
+.down-arrow{
+  	border: solid black;
+  	border-width: 0 2px 2px 0;
+  	display: inline-block;
+  	padding: 3px 3px;
+	transform: rotate(45deg);
+}
+
+.arrow-right{
+	width: 0; 
+  	height: 0; 
+  	border-top: 4em solid transparent;
+ 	border-bottom: 4em solid transparent;
+  	position: absolute;
+  	border-left: 8em solid #00B3FF;
+}
+
+#homeimg{
+	background-image: url("../images/openbook.png");
+	background-size: 3.5em 3.5em;
+	position: fixed;
+	top: 4%;
+	left: 1%;
+	z-index: 4;
+	/*background-color: #ff0000;*/
+	width: 3.5em;
+	height: 3.5em;
+}
+
+#description
+{
+	padding: 0;
+	width: 100%;
+	height: 50%;
+}
+#everest
+{
+	width: 100%;
+	height: 60%;
+
+}
+#description h2
+{
+	
+	color: #ffffff;
+	text-align: center;
+	
+	margin-top: 3%
+	
+}
+#whatwedo{
+	margin: 0%;
+	text-align: justify;
+	padding:  0% 15% 3% 15%;
+
+}
+
+/************************************************************
+**************************************************************/
+
+.glow-on-hover {
+    width: 10em;
+	padding: 5px 0px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+/******************************************************************************
+*****************************************************************************/
+.btn-flip {
+  opacity: 1;
+  outline: 0;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;	
+  text-transform: uppercase;
+  width: 250px;
+  height: 50px;
+}
+.btn-flip:hover:after {
+  opacity: 1;
+  -webkit-transform: translateY(0) rotateX(0);
+          transform: translateY(0) rotateX(0);
+}
+.btn-flip:hover:before {
+  opacity: 0;
+  -webkit-transform: translateY(50%) rotateX(90deg);
+          transform: translateY(50%) rotateX(90deg);
+}
+.btn-flip:after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  color: #333333;
+  display: block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute;
+  background: #adadaf;
+  content: attr(data-back);
+  -webkit-transform: translateY(-50%) rotateX(90deg);
+          transform: translateY(-50%) rotateX(90deg);
+}
+.btn-flip:before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  color: #ffffff;
+  display: block;
+  padding: 0 30px;
+  line-height: 40px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: relative;
+  background: #333333;
+  content: attr(data-front);
+  -webkit-transform: translateY(0) rotateX(0);
+          transform: translateY(0) rotateX(0);
+}
+
+/******************************************************************************
+*****************************************************************************/
+
+#container{
+	margin: 0 auto;
+	padding: 0px;
+	padding-top: 5em;
+	width: 80%;
+	height: auto;
+	position:relative;
+}
+
+#container h1{
+	color: #ffffff;
+	margin: 0 auto;
+	/*position: relative;*/
+}
+
+.buttonsline{
+	background-color: #e0e2e4;
+	width: 25em;
+	height: 3em;
+}
+
+.question-type{
+	border: none;
+	width: 11em;;
+	height: 100%;
+	background-color: #e0e2e4;
+	font-size: 1em;
+}
+
+.question-type:hover{
+	background-color: #c0c2c4;
+}
+
+.question-type:focus{
+	background-color: #c0c2c4;
+}
+
+
+.tabs{
+	display:none;
+	width: 100%;
+	height: 30em;
+	border: 1px solid #d0d2d4;
+	background-color: #c0c2c4;
+	
+}
+
+#multiplechoice,
+#wordanswer{
+	padding: 20px 0px;
+	float:left;
+	padding-left: 10px;
+	font-size: 1em;
+}
+
+.questiontitle{
+	width: 60%;
+	margin: 0 auto;
+	position: relative;
+	text-align: center;
+}
+
+.tinputbox{
+	width: 50%;
+	padding: 5px 5px;
+	font-size: 16px;
+	margin: 20px 0px;
+}
+
+.qinputbox{
+	width: 98%;
+	padding: 5px 5px;
+	font-size: 16px;
+	margin-botton: 15px;
+}
+
+.inputbox{
+	width: 85%;
+	padding: 5px 5px;
+	font-size: 16px;
+	margin: 10px 0px;
+}
+
+.Checked
+{
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     display: inline-block;
+     position: relative;
+     background-color: #f1f1f1;
+     color: #666;
+     top: 10px;
+     height: 30px;
+     width: 30px;
+     border: 0;
+     border-radius: 50px;
+     cursor: pointer;     
+     margin-right: 7px;
+     outline: none;
+}
+.Checked:checked::before
+{
+     position: absolute;
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 11px;
+     top: 7px;
+     content: '\02143';
+     transform: rotate(40deg);
+}
+.Checked:hover
+{
+     background-color: #f7f7f7;
+}
+.Checked:checked
+{
+     background-color: #f1f1f1;
+}
+
+/********************************************************************************
+********************about******************************************************/
+#aboutcontainer h1{
+	color: yellow;
+	font-size: 3em;
+}
+
+.author{
+	color: #87cefa;
+	font-size: 40px;
+}
+
+#aboutcontainer h3{
+	text-align: center;
+	font-weight: bolder;
+	font-style: italic;
+	font-size: 60px;
+	padding: 0px;
+	color: #00B3FF;
+}
+
+.p4{
+	color: #87cefa;
+	position: relative;
+	text-decoration: none;
+}
+
+.mail{
+	color: #87cefa;
+	text-decoration: none;
+}
+
+h2{
+	font-weight: bold;
+	position: relative;
+	text-align: center;
+	font-size: 22px;
+	line-height: 30px;
+	color: rgb(210,210,210);
+}
+
+.p2{
+	position: relative;
+	text-align: center;
+	font-style: italic;
+	font-size: 16px;
+	color: rgb(210,210,210);
+	line-height: 25px;
+}
+
+#teamimg{
+	position: relative;
+	margin: 0 auto;
+}
+
+#aboutcontainer{
+	margin: 0 auto;
+	position: relative;
+	padding-top: 5em;
+	text-align: center;
+}
+
+/***********************************************************************************
+************************************************************************************/
+
+.topwrapper{
+  position: fixed;
+  top: 20%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper{
+  position: fixed;
+  top: 80%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
+.link_wrapper{
+  position: relative;
+}
+
+.enterbutton{
+  display: block;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 16px; 
+  text-decoration: none;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid #00B3FF;
+  transition: all .35s;
+}
+
+.icon{
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .35s;
+}
+
+.icon svg{
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: #00B3FF;
+  transition: all .35s;
+}
+
+.enterbutton:hover{
+  width: 200px;
+  border: 3px solid #00B3FF;
+  background: transparent;
+  color: #00B3FF;
+}
+
+.enterbutton:hover{
+  border: 3px solid #00B3FF;
+  right: -25%;
+}
+
+/****************************************************************************
+*****************************create test************************************/
+
+#createtest{
+	position: relative;
+	width: 100%;
+	text-align: left;
+	color: #ffffff;
+}
+
+#createtest>h1{
+	color: #ffffff;
+	text-align: left;
+}
+
+#titleselect{
+	
+}
+
+#questionlist{
+	border: 2px solid aqua;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	width: 100%;
+}
+
+.evendisplay{
+	background-color: #8C8C8C;
+	color: #000000;
+	font-size: 18px;
+	padding-left: 2%;
+	width: 98%;
+	height: 2em;
+	vertical-align: middle;
+}
+
+.odddisplay{
+	background-color: #B7B7B7;
+	color: #000000;
+	font-size: 18px;
+	padding-left: 2%;
+	width: 98%;
+	height: 2em;
+	vertical-align: middle;
+}
+
+.addtotestbtn{
+	font-size: 18px;
+	width: 5em;
+	margin-right: 20px;
+}
+
+.points{
+	width: 30%;
+	height: 80%;
+	margin:0px;
+	padding:0px;
+	align-content:flex-end;
+	vertical-align:middle;
+	font-size: 16px;
+}
+
+.pointsdiv{
+	float: right;
+	width: 15%;
+	height: 100%;
+}
+
+
+/*****************************************************************
+***************professor******************************************/
+
+#welcomediv{
+	width: 100%;
+	padding-top:5em;
+	padding-left: 10%;
+	margin: 0 auto;
+	position:relative;
+	height: 1.5em;
+	background-color: #277A84;
+}
+
+#leftdiv{
+	width: 50%;
+	height: auto;
+	background-color: #c0c2c4;
+	border: 2px solid aqua;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	float: left;
+}
+
+#rightdiv{
+	width: 45%;
+	height: auto;
+	float:right;
+	border-left: 2px solid aqua;
+	border-bottom: 2px solid aqua;
+	border-bottom-left-radius: 10px;
+	padding-bottom: 2em;
+}
+
+#rightdiv h2{
+	font-size: 32px;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+}
+
+#rightdiv label{
+	font-size: 18px;
+	float: left;
+	width: 20%;
+	display: block;
+	padding-left:10px;
+	margin-bottom: 2%;
+}
+
+#rightdiv input[type="text"]{
+	font-size: 18px;
+	width: 45%;
+	display: block;
+	padding:5px;
+	margin-bottom: 2%;
+}
+
+#rightdiv .createtestbtn{
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px;
+	margin-left: 22%;
+}
+
+.newQuestionwrapper{
+  position: relative;
+  padding-top: 2em;
+	padding-left: 50%;
+  transform: translate(-25%, 0%);
+}
+
+.newQuestionwrapper .enterbutton{
+  display: block;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 16px; 
+  text-decoration: none;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid aqua;
+  transition: all .35s;
+}
+
+.newQuestionwrapper .enterbutton:hover{
+  width: 400px;
+  border: 3px solid aqua;
+  background: transparent;
+  color: #00B3FF;
+}
+
+.newQuestionwrapper .enterbutton:hover{
+  border: 3px solid #00B3FF;
+  right: -25%;
+}
+
+/*******************************************************************
+********************sessionhome*************************************/
+
+.maincontainer{
+	margin: 5% 15%;
+	padding: 5px;
+  width: 80%;
+  color: #000;
+	height: auto;
+	background-color: white;
+}
+table{
+  width: 100%;
+  
+}
+tr, th, td{
+  border: 1px solid black;
+  width: 30%;
+}
+.btn {
+  padding: 5px;
+  margin: 5%;
+  background-color: #00B3FF;
+  width: 80%;
+  height: 40px;
+  border-radius: 30px;
+  text-align: center;
+  align-self: center;
+  color:white
+}
+
+/*********************************************************
+**********createtest*************************************/
+
+.donetestwrapper{
+	position: fixed;
+	top: 10%;
+	left: 70%;
+}

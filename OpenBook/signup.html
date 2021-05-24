@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login/Signup</title>
+	<link rel="stylesheet" type="text/css" href = "cs/style.css">
+	<link rel="stylesheet" type="text/css" href = "cs/style1.css">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+	<header>
+		<div id="navbar">
+			<ul>
+				<li class="dropdown">
+					<a href="#">Teachers <div class="down-arrow"></div></a>
+					<div class="dropdown-content">
+						<a href="https://ssologin.cuny.edu/cuny.html" target="_blank">Blackboard</a>
+						<a href="https://cunyfirst.cuny.edu/" target="_blank">CUNYfirst</a>
+					</div>
+
+				</li>
+
+				<li class="dropdown"><a href="#">Students <div class="down-arrow"></div></a>
+					<div class="dropdown-content">
+						<a href="https://ssologin.cuny.edu/cuny.html" target="_blank">Blackboard</a>
+						<a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+						<a href="https://learn.zybooks.com/" target="_blank">zyBooks</a>
+					</div>
+				</li>
+				<li class="dropdown"><a href="about.html">About</a></li>
+				<li class="dropdown"><div class="glow-on-hover"><a href="login.html" style="color:#ffffff">Login/Signup</a></div></li>
+			</ul>
+		</div>
+
+		<div class="arrow-right"><a href="index.html"><div id="homeimg"></div></a></div>
+	</header>
+
+	<div class="loginbox">
+		<h1> SignUp </h1>
+		<form method="POST" action="registration.php" autocomplete="off">
+			<p> First Name: </p>
+			<input type = "text" name = "fname" placeholder= "Enter First Name" required>
+			<p> Last Name: </p>
+			<input type = "text" name = "lname" placeholder= "Enter Last Name" required>
+			<p> User Name: </p>
+			<input type = "text" name = "uname" placeholder= "Enter User Name" required>
+			<p> Account Type: </p>
+			<select name="accounttype">
+				<option value="S">Student</option>
+				<option value="P">Professor</option>
+			</select>
+			<p> Email Address:</p>
+			<input type = "email" name = "email" placeholder= "Enter email-address" required autocomplete="off">
+			<p> Password: </p>
+			<input type = "password" name = "password" placeholder = "Enter password" required autocomplete="off">
+			<button type="submit" name="Signup">SignUp</button><br>
+			<a href="login.html">Already have an account!</a>
+	<!--/*************************************************************/-->
+</form>
+</div>
+</body>
+</html>
